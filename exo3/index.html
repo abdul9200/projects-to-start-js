@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ</title>
+    <link rel="shortcut icon" href="LOGO.jfif" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a2eb501bb0.js" crossorigin="anonymous"></script>
+    <style>
+        #resultat{
+            margin:20px 60px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            display: none;
+        }
+        button{
+            margin: 2px 45%;
+            background-color: darkblue;
+            border: darkblue 1px;
+            padding: 10px;
+            color:white;
+            font-size: large;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: cyan;
+            color: black;
+        }
+        h1{
+            color: white;
+            font-size: 30px;
+            margin: 2px 45%;
+        }
+        #html{
+            display: none;
+
+        }
+        #css{
+            display: none;
+            
+        }
+        #js{
+            display: none;
+            
+        }
+        #container{
+            margin:20px 60px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+        } h2{
+            padding: 10PX 10%;
+            background-color: rgb(80, 238, 238);
+            
+        }
+        i{
+            margin:10px 5% ;
+            color: rgba(247, 163, 7, 0.904);
+            cursor: pointer;
+        }
+        .help{
+            background-color: rgb(247, 163, 7);
+            color:white;
+            margin:40px;
+            padding: 40px;
+            border-radius: 30px ;
+            display:none;
+            border: 1px solid white;
+            font-size: large;
+        }
+        
+        code{
+            margin:  30px;
+        }
+        .card{
+            border: 1px solid black;
+            margin:20px;
+            padding: 10px;
+            background-color: aqua;
+            border-top-left-radius: 30px ;
+            border-bottom-right-radius: 30px;
+        }
+        .answer{
+            background-color: white;
+            border: 1px black solid;
+            border-radius: 30px;
+            margin: 20px;
+        
+        }
+        .answer :hover{
+            zoom: 2;
+            padding: auto;
+        }
+        body{
+            background-image: url('téléchargement.jfif');
+        }
+        #regle{
+            border:solid 2px aqua; 
+        }
+        
+     
+    </style>
+</head>
+<body>
+  <h1>QUIZ</h1>
+    <div id="container"> <div id="regle">
+       <b ><em>Instruction:</em></b>
+       <p>-Ce test contient 30 questions en HTML,CSS et Javascript ,pour chaque question cochez la ou les bonne(s) réponses.</p>
+       <p>-Pour valider le test, il faut répondre au moins à sept question pour chaque catégorie; sinon la note ne sera pas calculer (le score sur 30 points).</p>
+       <p>-Si vous affichez la solution votre réponse sera compter comme fausse.</p>
+   </div>
+        <h2 onclick="testpart('html')">HTML</h2>
+        <div id="html">
+           
+            <div class="card">
+                
+                <h3 >L’élément &lt; title &gt; doit être situé dans</h3>
+                <div class="answer"><input type="radio" name="q1" id="r1q1" value="1"> 
+                <label for="r1q1"> élément &lt;head &gt;.</label><br></div>
+                <div class="answer"> <input type="radio" name="q1" id="r2q1" value="0">
+                <label for="r2q1"> élément &lt;body &gt;.</label>
+                
+               </div>
+               <i onclick="afficherReponse(0)" class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    élément &lt;head &gt;.
+                </div>
+            </div>
+            <div class="card">
+                <h3>Ouvrez l’abréviation HTML</h3>
+                <div class="answer">
+<input type="radio" name="q2" id="r1q2" value="0"> 
+                <label for="r1q2">  Hyper Text Modul Language</label><br>
+                </div>
+                <div class="answer">
+ <input type="radio" name="q2" id="r2q2" value="1">
+                <label for="r2q2">  Hyper Text Markup Language</label><br>
+                </div>
+                <div class="answer">
+<input type="radio" name="q2" id="r3q2" value="0"> 
+                <label for="r3q2">  Hyper Test Markup Language</label><br>
+                </div>
+                <div class="answer">
+ <input type="radio" name="q2" id="r4q2" value="0"> 
+                <label for="r4q2">   Hyperlink Markup Language</label><br>
+                </div>
+                
+               
+                <i onclick="afficherReponse(1)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    Hyper Text Markup Language
+                </div>
+               
+                
+            </div>
+            <div class="card">
+                <h3>Où on peut utiliser la balise &lt; style &gt; ?</h3>
+                <div class="answer"><input type="radio" name="q3" id="r1q3" value="0"> 
+                <label for="r1q3">  uniquement dans l’élément  &lt;head &gt;.</label><br></div>
+                <div class="answer"><input type="radio" name="q3" id="r2q3" value="0">
+                <label for="r2q3">  uniquement dans l’élément  &lt;body &gt;.</label><br></div>
+                <div class="answer"> <input type="radio" name="q3" id="r3q3" value="1">
+                <label for="r3q3">  dans l’élément &lt;head &gt; et dans l’élément  &lt;body &gt;.</label></div>
+                <i onclick="afficherReponse(2)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    dans l’élément &lt;head &gt; et dans l’élément  &lt;body &gt;
+                   
+                </div>
+            </div>
+            <div class="card">
+                <h3>Quelle balise utiliseriez-vous pour créer un lien hypertexte?</h3>
+                <div class="answer"><input type="radio" name="q4" id="r1q4" value="1"> 
+                <label for="r1q4">  &lt;a &gt;.</label><br></div>
+                <div class="answer"><input type="radio" name="q4" id="r2q4" value="0">
+                <label for="r2q4">   &lt;img &gt;.</label><br></div>
+                <div class="answer"><input type="radio" name="q4" id="r3q4" value="0">
+                <label for="r3q4">   &lt;dl&gt; </label></div>
+                <i onclick="afficherReponse(3)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    &lt;a &gt;.
+                </div>
+            </div>
+            <div class="card">
+                <h3>Comment ouvrir le lien dans une nouvelle fenêtre?</h3>
+                <div class="answer"><input type="radio" name="q5" id="r1q5" value="0"> 
+                <label for="r1q5">  target="_new"</label><br></div>
+                <div class="answer"><input type="radio" name="q5" id="r2q5" value="0">
+                <label for="r2q5">    target="_window"</label><br></div>
+                <div class="answer"><input type="radio" name="q5" id="r3q5" value="1">
+                <label for="r3q5">    target="_blank"
+                </label></div>
+                <i onclick="afficherReponse(4)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    target="_blank"
+                </div>
+            </div>
+            <div class="card">
+                <h3>Quel est l’élément HTML pour afficher une image?</h3>
+                <div class="answer"><input type="radio" name="q6" id="r1q6" value="0"> 
+                <label for="r1q6">  &lt;image&gt;.</label><br></div>
+                <div class="answer"><input type="radio" name="q6" id="r2q6" value="0">
+                <label for="r2q6">   &lt;picture &gt;.</label><br></div>
+                <div class="answer"> <input type="radio" name="q6" id="r3q6" value="1">
+                <label for="r3q6">   &lt;img&gt; </label><br></div>
+                <div class="answer"> <input type="radio" name="q6" id="r4q6" value="0">
+                <label for="r4q6">   &lt;pic&gt; </label></div>
+                <i onclick="afficherReponse(5)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    &lt;img&gt;
+                </div>
+            </div>
+            <div class="card">
+                <h3>Lorsque nous devons créer une liste ordonnée, quel balisage nous devons utiliser?</h3>
+                <div class="answer"> <input type="radio" name="q7" id="r1q7" value="0"> 
+                <label for="r1q7">  &lt;ul&gt;.</label><br></div>
+                <div class="answer"> <input type="radio" name="q7" id="r2q7" value="1">
+                <label for="r2q7">   &lt;ol &gt;.</label></div>
+                <i onclick="afficherReponse(6)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    &lt;ol &gt;.
+             </div>
+      
+            </div>
+            <div class="card">
+                <h3>Comment pouvez-vous mettre un texte en italique?</h3>
+                <div class="answer"> <input type="checkbox" name="q8" id="r1q8" value="0.5">
+                <label for="r1q8">&lt;em&gt; Quelque text &lt;em&gt;</label><br></div>
+                <div class="answer"><input type="checkbox" name="q8" id="r2q8" value="0">
+                <label for="r2q8">&lt;italic&gt; Quelque text &lt;italic&gt;</label><br></div>
+                <div class="answer"> <input type="checkbox" name="q8" id="r3q8" value="0.5">
+                <label for="r3q8">&lt;i&gt; Quelque text &lt;i&gt;</label><br></div>
+                <div class="answer"><input type="checkbox" name="q8" id="r4q8" value="0">
+                <label for="r4q8">&lt;strong&gt; Quelque text &lt;strong&gt;</label></div>
+                <i onclick="afficherReponse(7)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">les bonnes réponses : <br>
+                    &lt;em&gt; <br>
+                    &lt;i&gt;
+
+                </div>
+            </div>
+            <div class="card">
+                <h3>Laquelle des balises de table suivantes est utilisée pour créer une ligne de table?
+
+                </h3>
+                <div class="answer"><input type="radio" name="q9" id="r1q9" value="0"> 
+                <label for="r1q9">  &lt;th&gt;</label><br></div>
+                <div class="answer"><input type="radio" name="q9" id="r2q9" value="0">
+                <label for="r2q9">  &lt;td&gt;</label><br></div>
+                <div class="answer"><input type="radio" name="q9" id="r3q9" value="1"> 
+                <label for="r3q9"> &lt;tr&gt;</label><br></div>
+                <div class="answer"><input type="radio" name="q9" id="r4q9" value="0"> 
+                <label for="r4q9">   &lt;table&gt;</label><br></div>
+                <i onclick="afficherReponse(8)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    &lt;tr&gt;
+                </div>
+                
+            </div>
+             <div class="card">
+                <h3>Laquelle des balises HTML suivantes n’est pas valide?
+
+                </h3>
+                <div class="answer"> <input type="radio" name="q10" id="r1q10" value="0"> 
+                <label for="r1q10">  &lt;h1&gt;</label><br></div>
+                <div class="answer"> <input type="radio" name="q10" id="r2q10" value="1">
+                <label for="r2q10">  &lt;h8&gt;</label><br></div>
+                <div class="answer"> <input type="radio" name="q10" id="r3q10" value="0"> 
+                <label for="r3q10"> &lt;h4&gt;</label><br></div>
+                <div class="answer"><input type="radio" name="q10" id="r4q10" value="0"> 
+                <label for="r4q10">   &lt;h5&gt;</label><br></div>
+                <i onclick="afficherReponse(9)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    &lt;h8&gt;
+                </div>
+                
+            </div>
+            
+            
+        </div>
+        <h2 onclick="testpart('css')">CSS</h2>
+        <div id="css">
+            
+            <div class="card">
+                <h3>Quelle propriété voudriez-vous utiliser pour créer un espace entre la bordure de l'élément et le contenu interne?</h3>
+                <div class="answer"><input type="radio" name="Q1" id="r1Q1" value="0"> 
+                <label for="r1Q1">   margin</label><br></div>
+                <div class="answer"><input type="radio" name="Q1" id="r2Q1" value="1"> 
+                <label for="r2Q1">  padding</label><br></div>
+                <div class="answer"><input type="radio" name="Q1" id="r3Q1" value="0"> 
+                <label for="r3Q1">  border</label><br></div>
+                <div class="answer"><input type="radio" name="Q1" id="r4Q1" value="0"> 
+                <label for="r4Q1"> spacing</label><br></div>
+                <i onclick="afficherReponse(10)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    padding
+                </div>
+            </div>
+            <div class="card">
+                <h3>Comment définir le style pour un élément HTML spécifique avec un id de "special"?</h3>
+                <div class="answer"> <input type="radio" name="Q2" id="r1Q2" value="1"> 
+                <label for="r1Q2">    #special{ }</label><br></div>
+                <div class="answer"> <input type="radio" name="Q2" id="r2Q2" value="0"> 
+                <label for="r2Q2">   .special{ }</label><br></div>
+                <div class="answer"> <input type="radio" name="Q2" id="r3Q2" value="0"> 
+                <label for="r3Q2">   id.special{ }</label><br></div>
+                <div class="answer"> <input type="radio" name="Q2" id="r4Q2" value="0"> 
+               <label for="r4Q2">  element.special{ }</label><br></div>
+                <i onclick="afficherReponse(11)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    #special{ }
+                </div>
+            </div>
+            <div class="card">
+                <h3>Comment supprimer le soulignement des hyperliens en utilisant CSS?</h3>
+                <div class="answer"><input type="radio" name="Q3" id="r1Q3" value="0"> 
+                <label for="r1Q3">    a {underline:none}</label><br></div>
+                <div class="answer"><input type="radio" name="Q3" id="r2Q3" value="0"> 
+                <label for="r2Q3">   a {decoration:no underline}</label><br></div>
+                <div class="answer"><input type="radio" name="Q3" id="r3Q3" value="0"> 
+                <label for="r3Q3">    a {text-decoration:no underline}</label><br></div>
+                <div class="answer"><input type="radio" name="Q3" id="r4Q3" value="1"> 
+                <label for="r4Q3">    a {text-decoration:none}</label><br></div>
+     <i onclick="afficherReponse(12)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    a {text-decoration:none}
+                </div>           
+     
+            </div>
+            <div class="card">
+                <h3>Quel attribut HTML est utilisé pour définir une feuille de style en ligne?</h3>
+                <div class="answer"> <input type="radio" name="Q4" id="r1Q4" value="1"> 
+                <label for="r1Q4">   style</label><br></div>
+                <div class="answer"><input type="radio" name="Q4" id="r2Q4" value="0"> 
+                <label for="r2Q4">   in-style</label><br></div>
+                <div class="answer"><input type="radio" name="Q4" id="r3Q4" value="0"> 
+                <label for="r3Q4">   font</label><br></div>
+                <div class="answer"><input type="radio" name="Q4" id="r4Q4" value="0"> 
+                <label for="r4Q4">    class </label><br></div>
+     <i onclick="afficherReponse(13)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    style
+                </div>           
+     
+            </div>
+            <div class="card">
+                <h3>Quelle est la syntaxe correcte de CSS pour rendre tous les éléments &lt;p&gt; en gras?</h3>
+                <div class="answer"><input type="radio" name="Q5" id="r1Q5" value="0"> 
+                <label for="r1Q5">    p style="text-size:bold"</label><br></div>
+                <div class="answer"><input type="radio" name="Q5" id="r2Q5" value="0"> 
+                <label for="r2Q5">   p {text-size:bold}</label><br></div>
+                <div class="answer"> <input type="radio" name="Q5" id="r3Q5" value="0"> 
+                <label for="r3Q5">   p style="font-size:bold"</label><br></div>
+                <div class="answer"> <input type="radio" name="Q5" id="r4Q5" value="1"> 
+                <label for="r4Q5">     p {font-weight: bold} </label><br></div>
+     <i onclick="afficherReponse(14)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    p {font-weight: bold}
+                </div>          
+     
+            </div>
+            <div class="card">
+                <h3>Quelle propriété utiliseriez-vous pour changer la coleur de fond d'un élément HTML?</h3>
+                <div class="answer"> <input type="radio" name="Q6" id="r1Q6" value="0"> 
+                <label for="r1Q6">    bgcolor</label><br></div>
+                <div class="answer"><input type="radio" name="Q6" id="r2Q6" value="0"> 
+                <label for="r2Q6">    color</label><br></div>
+                <div class="answer"><input type="radio" name="Q6" id="r3Q6" value="1"> 
+                <label for="r3Q6">   background-color</label><br></div>
+                <div class="answer"><input type="radio" name="Q6" id="r4Q6" value="0"> 
+                <label for="r4Q6">     colorbg </label><br></div>
+     <i onclick="afficherReponse(15)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    background-color
+                </div>           
+     
+            </div>
+            <div class="card">
+                <h3>Quelle propriété utiliseriez-vous pour changer la taille de la bordure d'un élément HTML?</h3>
+                <div class="answer"><input type="radio" name="Q7" id="r1Q7" value="0"> 
+                <label for="r1Q7">    border-size:3px;</label><br></div>
+                <div class="answer"><input type="radio" name="Q7" id="r2Q7" value="0"> 
+                <label for="r2Q7">    border:width:3px;</label><br></div>
+                <div class="answer"><input type="radio" name="Q7" id="r3Q7" value="1"> 
+                <label for="r3Q7">    border-width:3px; </label><br></div>
+     <i onclick="afficherReponse(16)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    border-width:3px;
+                </div>           
+     
+            </div>
+            <div class="card">
+                <h3>Comment ajouter un commentaire dans un fichier CSS?</h3>
+                <div class="answer"><input type="radio" name="Q8" id="r1Q8" value="1"> 
+                <label for="r1Q8">     /* ceci est un commentaire */</label><br></div>
+                <div class="answer"><input type="radio" name="Q8" id="r2Q8" value="0"> 
+                <label for="r2Q8">   // ceci est un commentaire</label><br></div>
+                <div class="answer"> <input type="radio" name="Q8" id="r3Q8" value="0"> 
+                <label for="r3Q8">     // ceci est un commentaire // </label><br></div>
+                <div class="answer"><input type="radio" name="Q8" id="r4Q8" value="0"> 
+                <label for="r4Q8">    &lt;!-- ceci est un commentaire&gt; </label><br></div>
+     <i onclick="afficherReponse(17)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    /* ceci est un commentaire */
+                </div>           
+     
+            </div>
+            <div class="card">
+                <h3>Quelle propriété est utilisée pour changer la couleur du texte d'un élément?</h3>
+                <div class="answer"><input type="radio" name="Q9" id="r1Q9" value="1"> 
+                <label for="r1Q9">      color</label><br></div>
+                <div class="answer"><input type="radio" name="Q9" id="r2Q9" value="0"> 
+                <label for="r2Q9">    text-color</label><br></div>
+                <div class="answer"><input type="radio" name="Q9" id="r3Q9" value="0"> 
+                <label for="r3Q9">      font-color</label><br></div>
+                <div class="answer"><input type="radio" name="Q9" id="r4Q9" value="0"> 
+                <label for="r4Q9">     fontcolor </label><br></div>
+     <i onclick="afficherReponse(18)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    color
+                </div>           
+     
+            </div>
+            <div class="card">
+                <h3>Quel sélecteur est utilisé pour spécifier un style pour un seul élément?</h3>
+                <div class="answer"><input type="radio" name="Q10" id="r1Q10" value="1"> 
+                <label for="r1Q10">      id</label><br></div>
+                <div class="answer"><input type="radio" name="Q10" id="r2Q10" value="0"> 
+                <label for="r2Q10">    class</label><br></div>
+                <div class="answer"><input type="radio" name="Q10" id="r3Q10" value="0"> 
+                <label for="r3Q10">     text</label><br></div>
+                <div class="answer"><input type="radio" name="Q10" id="r4Q10" value="0"> 
+                <label for="r4Q10">     style </label><br></div>
+     <i onclick="afficherReponse(19)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    id
+                </div>           
+     
+            </div>
+        </div>
+        <h2 onclick="testpart('js')">JS</h2>
+        <div id="js">
+            
+            <div class="card">
+                <h3>
+                    Quel est la syntaxe correcte pour utiliser un fichier javascript?
+                </h3>
+                <div class="answer"> <input type="radio" name="qq1" id="r1qq1" value="1"> 
+                <label for="r1qq1">       &lt;script src="xxx.js">&lt;/script></label><br></div>
+                <div class="answer"> <input type="radio" name="qq1" id="r2qq1" value="0"> 
+                <label for="r2qq1">       &lt;script href="xxx.js">&lt;/script></label><br></div>
+                <div class="answer"> <input type="radio" name="qq1" id="r3qq1" value="0"> 
+                <label for="r3qq1">       &lt;script path="xxx.js">&lt;/script></label><br></div>
+                <div class="answer"><input type="radio" name="qq1" id="r4qq1" value="0"> 
+                <label for="r4qq1">       &lt;script link="xxx.js">&lt;/script></label><br></div>
+<i onclick="afficherReponse(20)" class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    &lt;script src="xxx.js">&lt;/script>
+                </div>                
+
+            </div>
+
+            <div class="card">
+                <h3>
+                    Comment pouvons-nous déclarer une fonction en Javascript?
+                </h3>
+                <div class="answer"><input type="radio" name="qq2" id="r1qq2" value="1"> 
+                <label for="r1qq2">       function myFunction(...)</label><br></div>
+                <div class="answer"><input type="radio" name="qq2" id="r2qq2" value="0"> 
+                <label for="r2qq2">      myFunction function(...)</label><br></div>
+                <div class="answer"><input type="radio" name="qq2" id="r3qq2" value="0"> 
+                <label for="r3qq2">      declare function myFunction(...)</label><br></div>
+                <div class="answer"><input type="radio" name="qq2" id="r4qq2" value="0"> 
+                <label for="r4qq2">       var function myFunction(...)</label><br></div>
+<i onclick="afficherReponse(21)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    function myFunction(...)
+                </div>                
+
+            </div>
+            <div class="card">
+                <h3>
+                    Comment appeler la fonction myFunction en JavaScript?
+                </h3>
+                <div class="answer"> <input type="radio" name="qq3" id="r1qq3" value="0"> 
+                <label for="r1qq3">       call function myFunction(...)</label><br></div>
+                <div class="answer"><input type="radio" name="qq3" id="r2qq3" value="0"> 
+                <label for="r2qq3">      funcall myFunction(...)</label><br></div>
+                <div class="answer"><input type="radio" name="qq3" id="r3qq3" value="1"> 
+                <label for="r3qq3">      myFunction(...)</label><br></div>
+                <div class="answer"><input type="radio" name="qq3" id="r4qq3" value="0"> 
+                <label for="r4qq3">       call myFunction(...)</label><br></div>
+<i onclick="afficherReponse(22)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    myFunction(...)
+                </div>                
+
+            </div>
+            <div class="card">
+                <h3>
+                    Comment utiliser "While" en Javascript ?
+                </h3>
+                <div class="answer"><input type="radio" name="qq4" id="r1qq4" value="0"> 
+                <label for="r1qq4">       (while ...){...}</label><br></div>
+                <div class="answer"><input type="radio" name="qq4" id="r2qq4" value="1"> 
+                <label for="r2qq4">     while(...){...}</label><br></div>
+                <div class="answer"><input type="radio" name="qq4" id="r3qq4" value="0"> 
+                <label for="r3qq4">      while ... ...</label><br></div>
+                <div class="answer"> <input type="radio" name="qq4" id="r4qq4" value="0"> 
+                <label for="r4qq4">       do while (...) {...} then {...}</label><br></div>
+<i onclick="afficherReponse(23)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    while(...){...}
+                </div>               
+
+            </div>
+            <div class="card">
+                <h3>
+                    Quel est le moyen correct d'utiliser un commentaire en Javascript ?
+                </h3>
+                <div class="answer"> <input type="radio" name="qq5" id="r1qq5" value="0"> 
+                <label for="r1qq5">       {# ... #}</label><br></div>
+                <div class="answer"> <input type="radio" name="qq5" id="r2qq5" value="0"> 
+                <label for="r2qq5">      &lt;!--- .... ---!></label><br></div>
+                <div class="answer"><input type="radio" name="qq5" id="r3qq5" value="0"> 
+                <label for="r3qq5">      // ....</label><br></div>
+                <div class="answer"><input type="radio" name="qq5" id="r4qq5" value="1"> 
+                <label for="r4qq5">       \\ ...</label><br></div>
+<i onclick="afficherReponse(24)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    \\ ...
+                </div>                
+
+            </div>
+            <div class="card">
+                <h3>
+                    Quel est le moyen correct de déclarer un tableau en Javascript?
+                </h3>
+                <div class="answer"><input type="radio" name="qq6" id="r1qq6" value="1"> 
+                <label for="r1qq6">      var names = ['Argishti', 'Hayk', 'Vardan']</label><br></div>
+                <div class="answer"><input type="radio" name="qq6" id="r2qq6" value="0"> 
+                <label for="r2qq6">     var names = array('Argishti', 'Hayk', 'Vardan')</label><br></div>
+                <div class="answer"> <input type="radio" name="qq6" id="r3qq6" value="0"> 
+                <label for="r3qq6">       var name = 'Argishti', 'Hayk', 'Vardan'</label><br></div>
+                <div class="answer"><input type="radio" name="qq6" id="r4qq6" value="0"> 
+                <label for="r4qq6">        var names = [0]=>'Argishti', [1]=>'Hayk',[2]=> 'Vardan</label><br></div>
+<i onclick="afficherReponse(25)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    var names = ['Argishti', 'Hayk', 'Vardan']
+                </div>                
+
+            </div>
+            <div class="card">
+                <h3>
+                    Est-ce que JavaScript est le même que Java?
+                </h3>
+                <div class="answer"><input type="radio" name="qq7" id="r1qq7" value="0"> 
+                <label for="r1qq7">      Oui</label><br></div>
+                <div class="answer"><input type="radio" name="qq7" id="r2qq7" value="1"> 
+                <label for="r2qq7">    Non</label><br></div>
+                
+<i onclick="afficherReponse(26)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    Non
+                </div>                
+
+            </div>
+            
+            <div class="card">
+                <h3>
+                    Comment détecter le nom du navigateur du client?
+                </h3>
+                <div class="answer"><input type="radio" name="qq8" id="r1qq8" value="1"> 
+                <label for="r1qq8">      navigator.appName</label><br></div>
+                <div class="answer"> <input type="radio" name="qq8" id="r2qq8" value="0"> 
+                <label for="r2qq8">     navigator.browserName</label><br></div>
+                <div class="answer"> <input type="radio" name="qq8" id="r3qq8" value="0"> 
+                <label for="r3qq8">       browser.name</label><br></div>
+               
+<i onclick="afficherReponse(27)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    navigator.appName
+                </div>              
+
+            </div>
+            <div class="card">
+                <h3>
+                    Quel est le résultat de "variable" ?<br>
+                    
+                  
+
+                </h3><code>  var variable;<br>
+if ( 10 > 4){<br>
+variable = 0;<br>
+}<br>
+else {<br>
+variable = 55;<br>
+}<br></code>
+                <div class="answer"> <input type="radio" name="qq9" id="r1qq9" value="1"> 
+                <label for="r1qq9">      0</label><br></div>
+                <div class="answer"><input type="radio" name="qq9" id="r2qq9" value="0"> 
+                <label for="r2qq9">    55</label><br></div>
+                <div class="answer"><input type="radio" name="qq9" id="r3qq9" value="0"> 
+                <label for="r3qq9">      undefined</label><br></div>
+                
+<i onclick="afficherReponse(28)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    0
+                </div>              
+
+            </div>
+            <div class="card">
+                <h3>
+                    Quel est le résultat de "variable" ? <br>
+                    
+                   
+
+                </h3>
+                <code> var variable;<br>
+                    if ( 11 == 11 and 12 &lt; 10 ){<br>
+variable = 12;<br>
+}<br>
+else {<br>
+variable = 'undefined';<br>
+}<br></code>
+                <div class="answer"><input type="radio" name="qq10" id="r1qq10" value="0"> 
+                <label for="r1qq10">      0</label><br></div>
+                <div class="answer"><input type="radio" name="qq10" id="r2qq10" value="0"> 
+                <label for="r2qq10">    12</label><br></div>
+                <div class="answer"><input type="radio" name="qq10" id="r3qq10" value="1"> 
+                <label for="r3qq10">      undefined</label><br></div>
+                
+<i onclick="afficherReponse(29)"  class="fas fa-3x fa-info-circle"></i>
+                <div class="help">la bonne réponse : <br>
+                    undefined
+                </div>              
+
+            </div>
+
+        </div>
+        <button onclick="validate()">validate</button>
+       
+    </div>
+    <div id="resultat">
+        <div id="message"></div>
+        <button onclick="repasser()">Repasse Test</button>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

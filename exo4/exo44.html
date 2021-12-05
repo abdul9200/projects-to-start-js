@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.jfif" type="image/x-icon">
+    <title>Jeu Memory</title>
+    <style>
+         *{
+            font-family: 'Lobster', cursive;
+            
+            box-sizing: content-box;
+        }
+        input[type="button"]:hover{
+            background-color: greenyellow;
+        }
+        input[type="button"]{
+            background-color: transparent;
+            padding: 10px 15px;
+            border-radius: 30%;
+
+        }
+        .jeu{
+            height: 512px;
+            width: 512px;
+            margin: auto !important;
+            display: none;
+        }
+        body{
+            background-image: linear-gradient( #315C2B , green, green , green,#315C2B,#315C2B  );
+            height: 100vh;
+            
+            margin: 0px;
+        }
+        
+        .case{
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            float: left;
+            margin:10px;
+            background: url('card.png')    ;
+            background-size: cover;
+            background-position-x: center;
+            
+        }
+        img{
+            height: 100px;
+            width:100px;
+            visibility: hidden;
+
+        }
+        hr{
+            clear: both;
+            visibility: hidden;
+        }
+     /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  color:rgb(0,0,0);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+#gameover{
+    display: none;
+}
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;
+    color:rgb(0,0,0);}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+  padding: 0 38%;
+}
+.levels{
+    margin:12px 25px;
+}
+.levels input{
+    margin:0px 5px;
+    background-color: #5cb85c;
+    color: white;
+    padding: 7px;
+    width: 40px;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color:#FFED66;
+    
+}
+
+.info *{
+margin:10px;
+color:#FFED66;
+}
+    </style>
+</head>
+<body onload="newgame()">
+    
+    <div class="info">
+        <h1>Jeu Memory</h1>
+        <div class="newgame">
+            <input type="button" value="New Game" onclick="newGame()">
+            </div>
+            <div>
+                <input type="button" value="Help" onclick="Help()" id="Help" style="display: none;">
+            </div>
+   
+    </div>
+    <div class="info">
+        <h3 id="Timer"></h3>
+        <h3 id="score"></h3>
+    </div>
+    
+    <div class="jeu">
+        <div class="cards">
+        <div class="case" onclick="flip(1)"><img src="img1.jpg"  alt="img1" id="img1" ></div>
+        <div class="case"  onclick="flip(2)"><img src="img1.jpg" alt="img1" id="img2"></div>
+        <div class="case" onclick="flip(3)"><img src="img2.jpg" alt="img2" id="img3"></div>
+        <div class="case" onclick="flip(4)"><img src="img2.jpg" alt="img2" id="img4"></div>
+        <div class="case" onclick="flip(5)"><img src="img3.jpg" alt="img3" id="img5"></div>
+        <div class="case" onclick="flip(6)"><img src="img3.jpg" alt="img3" id="img6"></div>
+        <div class="case" onclick="flip(7)"><img src="img4.jpg" alt="img4" id="img7"></div>
+        <div class="case" onclick="flip(8)"><img src="img4.jpg" alt="img4" id="img8"></div>
+        <div class="case" onclick="flip(9)"><img src="img5.jpg" alt="img5" id="img9"></div>
+        <div class="case" onclick="flip(10)"><img src="img5.jpg" alt="img5" id="img10"></div>
+        <div class="case" onclick="flip(11)"><img src="img6.jpg" alt="img6" id="img11"></div>
+        <div class="case" onclick="flip(12)"><img src="img6.jpg" alt="img6" id="img12"></div>
+        <div class="case" onclick="flip(13)"><img src="img7.jpg" alt="img7" id="img13"></div>
+        <div class="case" onclick="flip(14)"><img src="img7.jpg" alt="img7" id="img14"></div>
+        <div class="case" onclick="flip(15)"><img src="img8.jpg" alt="img8" id="img15"></div>
+        <div class="case" onclick="flip(16)"><img src="img8.jpg" alt="img8" id="img16"></div>
+        <hr>
+        </div>
+       
+        
+
+    </div>
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            
+            <h2>Welcome to Memory game</h2>
+          </div>
+          <div class="modal-body">
+            <h3>Choose the level</h3>
+            <div class="levels">
+                <input type="button" value="facile" onclick="Facile()">
+        <input type="button" value="Moyen" onclick="Moyen()">
+        <input type="button" value="Difficile" onclick="Difficile()">
+            </div>
+          </div>
+          
+        </div>
+      
+      </div>
+      <div id="gameover" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 > GAME OVER</h2>
+          </div>
+          <div class="modal-body">
+              <h3 id="res"></h3>
+            <h3>Your score is : <span id=resscore> </span></h3>
+            <h3>Restart?</h3>
+          </div>
+          <div class="modal-footer">
+              <input type="button" value="newGame" onclick="newGame()">
+          </div>
+          
+        </div>
+      
+      </div>
+      
+</body>
+<script>
+    function removeItemAll(arr, value) {
+  var i = 0;
+  while (i < arr.length) {
+    if (arr[i] === value) {
+      arr.splice(i, 1);
+    } else {
+      ++i;
+    }
+  }
+  return arr;
+}
+function getAllIndexes(arr, val) {
+    var indexes = [], i = -1;
+    while ((i = arr.indexOf(val, i+1)) != -1){
+        indexes.push(i);
+    }
+    return indexes;
+}
+function melanger(){
+            n1=Math.ceil(16*Math.random());
+            img1=document.getElementById('img'+n1);
+            n2=Math.ceil(16*Math.random());
+            img2=document.getElementById('img'+n2);
+            var inter=img1.src;
+            img1.src=img2.src;
+            img2.src=inter;
+
+        }
+        function newGame(){
+           document.location.reload();
+       }
+        
+        function initgame(){
+            for(i=0;i<20;i++){
+                melanger();
+            }
+            timer();
+        }
+        var  a=60000
+        function Difficile (){
+            a=45000
+            
+            document.getElementsByClassName("jeu")[0].style.display="block";
+            document.getElementById("score").style.display="block";
+            document.getElementsByClassName("newgame")[0].style.display="block";
+            document.getElementsByClassName("levels")[0].style.display="none";
+            initgame()
+            close()
+            
+        }
+        function Facile(){
+            
+            document.getElementById("Help").style.display="block";
+            a=60000
+            document.getElementsByClassName("jeu")[0].style.display="block";
+            document.getElementsByClassName("levels")[0].style.display="none";
+            document.getElementById("score").style.display="block";
+            document.getElementsByClassName("newgame")[0].style.display="block";
+            initgame()
+            close()
+        }
+        function Moyen(){
+            a=60000
+           
+            document.getElementById("score").style.display="block";
+            document.getElementsByClassName("newgame")[0].style.display="block";
+            document.getElementsByClassName("jeu")[0].style.display="block";
+            document.getElementsByClassName("levels")[0].style.display="none";
+            initgame()
+            close()
+        }
+       
+
+
+        function Help(){
+          
+           let listhelp=[];
+     let listcard=[]
+            for(i=1;i<17;i++){
+                listhelp.push(document.getElementById("img"+i).src)
+                listcard.push(document.getElementById("img"+i).src)
+                
+            }
+            if(founded.length>0){
+                for (j=0;j<founded.length;j++){
+                    removeItemAll(listhelp,founded[j])
+                }
+            }
+            let index=[]
+            index=getAllIndexes(listcard,listhelp[0]);
+           flip(index[0]+1)
+           flip(index[1]+1)
+            scoreres -=50
+            
+        }
+        function timer(){
+           if(a>0 ){
+            document.getElementById('Timer').textContent='Time :'+a
+            a-=1000
+            
+            time=setTimeout(timer,1000);
+           }
+           else{
+            gameover()
+           }
+        }
+     
+       
+       
+        listsrc=[];
+        listid=[];
+        cardflipped=1;
+        scoreres=0
+        score=document.getElementById("score");
+        score.textContent="Score: "+scoreres;
+        founded=[];
+        function gameover(){
+           if (founded.length==16)
+            document.getElementById('res').textContent="You Won!";
+            else
+            document.getElementById('res').textContent="Hard Luck!";
+           document.getElementsByClassName('info')[0].style.display="none"
+           document.getElementsByClassName('info')[1].style.display="none"
+           document.getElementById('resscore').textContent=scoreres;
+               document.getElementsByClassName('jeu')[0].style.display="none";
+               document.getElementById("gameover").style.display="block"
+          }
+        function flip(i){
+            listsrc.push(document.getElementById("img"+i).src);
+           
+           listid.push("img"+i)
+           cardflipped--;
+           document.getElementById("img"+i).style.visibility="visible";
+          
+        }
+      
+          function jeu(){  
+           
+        if(cardflipped==-1){
+
+            if(listsrc[0]==listsrc[1]){
+                scoreres+=100
+                score.textContent="Score: "+scoreres;
+                founded.push(listsrc[0],listsrc[1])
+                cardflipped=1
+                listsrc=[]
+                listid=[]
+                
+            
+
+            }
+            else{
+                document.getElementById(listid[0]).style.visibility="hidden"
+                document.getElementById(listid[1]).style.visibility="hidden"
+                cardflipped=1
+                listsrc=[]
+                listid=[]
+           
+
+            }
+        }
+        if(scoreres==800){
+            gameover()
+        }
+        if(founded.length==16){
+            gameover()
+        }
+        setTimeout(jeu,300);
+    }
+    jeu()
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+
+
+// When the user clicks on <span> (x), close the modal
+ function close() {
+  modal.style.display = "none";
+}
+function newgame(){
+    modal.style.display = "block";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <title>Document</title>
+   
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+           
+            
+            
+            
+            
+            
+       
+           
+        }
+        .card{
+            flex: 1;
+            border: 1px solid black;
+            margin:5px;
+            padding: 5px;
+            
+       
+        }
+        label {
+            margin:5px;
+        }
+        select{
+            margin:5px
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <P><span class="word"><span id="fletter">L</span>orem </span><span class="word"><span id="fletter">i</span>psum </span><span class="word"><span id="fletter">d</span>olor </span><span class="word"><span id="fletter">s</span>it </span><span class="word"><span id="fletter">a</span>met </span><span class="word"><span id="fletter">c</span>onsectetur </span><span class="word"><span id="fletter">a</span>dipisicing </span><span class="word"><span id="fletter">e</span>lit. </span><span class="word"><span id="fletter">N</span>am </span><span class="word"><span id="fletter">v</span>itae </span><span class="word"><span id="fletter">v</span>oluptatum </span><span class="word"><span id="fletter">v</span>uscipit </span><span class="word"><span id="fletter">s</span>apiente </span><span class="word"><span id="fletter">a</span>spernatur, </span><span class="word"><span id="fletter">v</span>oluptas </span><span class="word"><span id="fletter">l</span>ibero </span><span class="word"><span id="fletter">v</span>oluptates </span><span class="word"><span id="fletter">a</span>rchitecto </span><span class="word"><span id="fletter">m</span>aiores </span><span class="word"><span id="fletter">d</span>olorem.</P>
+            <div id="img"><img src="img5.jpg" alt="imag" height="100%" width="100%" ></div>
+            
+            <P></span><span class="word"><span id="fletter">L</span>orem </span><span class="word"><span id="fletter">i</span>psum </span><span class="word"><span id="fletter">d</span>olor </span><span class="word"><span id="fletter">s</span>it </span><span class="word"><span id="fletter">a</span>met </span><span class="word"><span id="fletter">c</span>onsectetur </span><span class="word"><span id="fletter">a</span>dipisicing </span><span class="word"><span id="fletter">e</span>lit. </span><span class="word"><span id="fletter">N</span>am </span><span class="word"><span id="fletter">v</span>itae </span><span class="word"><span id="fletter">v</span>oluptatum </span><span class="word"><span id="fletter">v</span>uscipit </span><span class="word"><span id="fletter">s</span>apiente </span><span class="word"><span id="fletter">a</span>spernatur, </span><span class="word"><span id="fletter">v</span>oluptas </span><span class="word"><span id="fletter">l</span>ibero </span><span class="word"><span id="fletter">v</span>oluptates </span><span class="word"><span id="fletter">a</span>rchitecto </span><span class="word"><span id="fletter">m</span>aiores </span><span class="word"><span id="fletter">d</span>olorem.</P>
+            
+
+        </div>
+        <div class="card">
+            <label for="cf">Coleur de fond</label>
+            <select name="cf" id="cf" >
+                <option value="white">Blanc</option>
+                <option value="blue">Bleu</option>
+                <option value="green">Vert</option>
+                <option value="yellow">Jaune</option>
+                
+            </select>
+            <br>
+            <label for="text">Text</label>
+            <select name="text" id="text" >
+                <option value="normal">normal</option>
+                <option value="souligné">souligné</option>
+                <option value="italic">italic</option>
+                <option value="bold">gras</option>
+            </select>
+            <br>
+            <label for="fam">Police</label>
+            <select name="fam" id="fam" >
+                <option value="Times New Roman, Times, serif">TimesNewRoman</option>
+                <option value="Verdana, Geneva, Tahoma, sans-serif">Verdana</option>
+            </select>
+            <br>
+            <label for="fam1">Police 1ère phrases</label>
+            <select name="fam1" id="fam1"> 
+                <option value="Times New Roman, Times, serif">TimesNewRoman</option>
+                <option value="Verdana, Geneva, Tahoma, sans-serif">Verdana</option>
+                <option value="Segoe UI, Tahoma, Geneva, Verdana, sans-serif"> Segoe</option>
+            </select>
+            <br>
+            <label for="char1">premier charactère</label>
+            <select name="char1" id="char1" >
+                <option value="normal">normal</option>
+                <option value="bold">gras</option>
+            </select>
+            <br>
+            <label for="mr">Mot rouge</label>
+            <input type="text" name="mr" id="mr">
+            <input type="button" value="Ok" id="ok" >
+            <br>
+            <label for="bdr">Bordure images</label>
+            <select name="bdr" id="bdr">
+                <option value="none">Rien</option>
+                <option value="solid 4px black ">simple</option>
+                <option value="double 4px black  ">double</option>
+            </select>
+            <br>
+            <input type="button" id="raz" value="RAZ formulaire" >
+
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<script >
+    $("#cf").on("change",couleur);
+    $("#text").on("change",texture);
+    $("#fam").on("change",fam);
+    $("#fam1").on("change",fam1);
+    $("#char1").on("change",char1);
+    $("#bdr").on("change",image);
+    $("#ok").on("click",rojo);
+    $("#raz").on("click",rld);
+    
+function texture(){
+    modif=$("#text").val();
+    if(modif=='italic' ){
+        $(".card")[0].style.textDecoration="none";
+        $(".card")[0].style.fontWeight="normal";
+        $(".card")[0].style.fontStyle=modif;
+    }
+    
+    if(modif=='bold'){
+        $(".card")[0].style.fontWeight=modif;
+        $(".card")[0].style.fontStyle="normal";
+        $(".card")[0].style.textDecoration="none";
+
+    }
+    
+    if(modif=='souligné'){
+        $(".card")[0].style.textDecoration="underline";
+        $(".card")[0].style.fontStyle="normal";
+        $(".card")[0].style.fontWeight="normal";
+    }
+    
+    if(modif=='normal')
+    {
+    $(".card")[0].style.textDecoration="none"
+    $(".card")[0].style.fontStyle=modif;
+    $(".card")[0].style.fontWeight=modif;}
+
+    
+}
+function rld(){
+    document.location.reload()
+}
+function fam(){
+$(".card")[0].style.fontFamily=$('#fam').val();
+$(".card")[0].children[0].style.fontFamily=$('#fam').val();
+}
+function fam1(){
+    $(".card")[0].children[0].style.fontFamily=$('#fam1').val();
+}
+
+function couleur(){
+    card=$('.card')[0];
+    console.log($('#cf').val());
+    card.style.backgroundColor=$('#cf').val();
+
+    }
+    function rojo(){
+        cible=$("#mr").val();
+        $(".word")[cible].style.color='red';
+        
+    }
+    function char1(){ 
+        span=parseInt($('#fletter'));
+        for(i=0;i<span.length;i++){
+            span[i].style.fontWeight=$("#char1").val();
+        }
+        
+    }
+    function image(){
+        ima=$('#img');
+        ima.style.border=$("#bdr").val();
+    } </script>
+</html>
